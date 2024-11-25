@@ -27,8 +27,10 @@ function ContactForm() {
     if (!userInput.email || !userInput.message || !userInput.name) {
       setError({ ...error, required: true });
       return;
+    // biome-ignore lint/style/noUselessElse: <explanation>
     } else if (error.email) {
       return;
+    // biome-ignore lint/style/noUselessElse: <explanation>
     } else {
       setError({ ...error, required: false });
     };
