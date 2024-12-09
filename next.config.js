@@ -1,9 +1,13 @@
-const path = require('path')
+const path = require('path');
 
-module.exports = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+    // Konfigurasi untuk SASS
     sassOptions: {
         includePaths: [path.join(__dirname, 'styles')],
     },
+
+    // Konfigurasi untuk gambar remote
     images: {
         remotePatterns: [{
                 protocol: 'https',
@@ -22,4 +26,12 @@ module.exports = {
             },
         ],
     },
-}
+
+    output: 'export',
+    basePath: '/portfoliojoyva.github.io',
+    assetPrefix: '/portfoliojoyva.github.io',
+
+    trailingSlash: true,
+};
+
+module.exports = nextConfig;
