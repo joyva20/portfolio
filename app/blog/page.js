@@ -26,9 +26,9 @@ async function page() {
         span className = "w-24 h-[2px] bg-[#1a1443]" > < /span> <
         span className = "bg-[#1a1443] w-fit text-white p-2 px-5 text-2xl rounded-md" >
         All Blog <
-        /span> { /* biome-ignore lint/style/useSelfClosingElements: <explanation> */ } <
-        span className = "w-24 h-[2px] bg-[#1a1443]" > < /span> <
-        /div> <
+        /span> { / * biome - ignore lint / style / useSelfClosingElements: < explanation > * / } <
+        span className = "w-24 h-[2px] bg-[#1a1443]" > < /span> < /
+        div > <
         /div>
 
         <
@@ -41,8 +41,8 @@ async function page() {
                 />
             ))
         } <
-        /div> <
-        /div>
+        /div> < /
+        div >
     );
 };
 
