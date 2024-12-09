@@ -12,6 +12,6 @@ export const personalData = {
     twitter: 'https://x.com/FactJeSoobbb',
     stackOverflow: 'https://stackoverflow.com',
     leetcode: "https://leetcode.com/",
-    devUsername: "joyva",
+    devUsername: "joyva20",
     resume: "https://drive.google.com/file/d/1TzUyajb5Vc27C4Zsdk9fD_zQIal0SPhG/view?usp=sharing"
 }
