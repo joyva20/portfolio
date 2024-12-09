@@ -1,4 +1,4 @@
-// biome-ignore lint/style/useNodejsImportProtocol: <explanation>
+// biome-ignore lint/style/useNodejsImportProtocol: Path module usage is required for compatibility
 const path = require('path');
 
 module.exports = {
@@ -23,6 +23,7 @@ module.exports = {
             },
         ],
     },
-    basePath: '/portfolio',
-    assetPrefix: '/portfolio/',
+    output: 'export', // Enable static export for Next.js
+    basePath: '/portfolio', // Set the base path for your app
+    assetPrefix: '/portfolio/', // Set asset prefix to match basePath
 };

@@ -1,35 +1,46 @@
+// @flow strict
 import { personalData } from "@/utils/data/personal-data";
 
 async function getBlog(slug) {
-    const res = await fetch(`https://dev.to/api/articles/${personalData.devUsername}/${slug}`);
+    const res = await fetch(
+        `https://dev.to/api/articles/${personalData.devUsername}/${slug}`
+    );
 
     if (!res.ok) {
-        throw new Error('Failed to fetch data');
+        throw new Error("Failed to fetch data");
     }
 
-    const data = await res.json();
-    return data;
+    return res.json();
 }
 
 export async function generateStaticParams() {
-    const blogs = await fetch(`https://dev.to/api/articles?username=${personalData.devUsername}`);
-    const blogData = await blogs.json();
+    const res = await fetch(
+        `https://dev.to/api/articles?username=${personalData.devUsername}`
+    );
 
-    return blogData.map((blog) => ({
-        slug: blog.slug,
+    if (!res.ok) {
+        throw new Error("Failed to fetch data");
+    }
+
+    const articles = await res.json();
+
+    return articles.map((article) => ({
+        slug: article.slug,
     }));
 }
 
-function BlogDetails({ params }) {
-    const { slug } = params;
-    const blog = getBlog(slug);
+async function BlogDetails({ params }) {
+    const slug = params.slug;
+    const blog = await getBlog(slug);
 
     return ( <
         div >
         <
-        h1 > { blog.title } < /h1> <
-        p > { blog.description } < /p> {/ * Render data blog lainnya * /} < /
-        div >
+        h1 > { blog.title } < /h1> <p> {blog.description} </p > { " " } <
+        div dangerouslySetInnerHTML = {
+            { __html: blog.body_html } }
+        />{" "} <
+        /div>
     );
 }
 
