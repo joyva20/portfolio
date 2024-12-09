@@ -7,7 +7,9 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint"
+        "lint": "next lint",
+        "export": "next export",
+        "deploy": "npm run build && npm run export && npx gh-pages -d out"
     },
     "dependencies": {
         "@emailjs/browser": "^4.3.1",
@@ -30,6 +32,7 @@
         "eslint-config-next": "latest",
         "postcss": "latest",
         "sass": "^1.69.5",
-        "tailwindcss": "latest"
+        "tailwindcss": "latest",
+        "gh-pages": "^5.0.0"
     }
 }

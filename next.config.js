@@ -1,13 +1,10 @@
+// biome-ignore lint/style/useNodejsImportProtocol: <explanation>
 const path = require('path');
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-    // Konfigurasi untuk SASS
+module.exports = {
     sassOptions: {
         includePaths: [path.join(__dirname, 'styles')],
     },
-
-    // Konfigurasi untuk gambar remote
     images: {
         remotePatterns: [{
                 protocol: 'https',
@@ -26,12 +23,7 @@ const nextConfig = {
             },
         ],
     },
-
     output: 'export',
-    basePath: '/portfoliojoyva.github.io',
-    assetPrefix: '/portfoliojoyva.github.io',
-
-    trailingSlash: true,
+    basePath: '/portfolio',
+    assetPrefix: '/portfolio/',
 };
-
-module.exports = nextConfig;
