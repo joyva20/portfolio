@@ -15,7 +15,7 @@
 
 ![](./public/image/screen.png)
 
-## View live preview [here](https://joyva.netlify.app/).
+## View live preview [here](https://portfolio-joyva.netlify.app/).
 
 ---
 
