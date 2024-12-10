@@ -1,5 +1,5 @@
 <p align="center" width="100%">
-![](./public/image/profile.png)
+<img src="/image/profile.png" alt="Profile Image" width="200" />
 </p>
 
 ---
