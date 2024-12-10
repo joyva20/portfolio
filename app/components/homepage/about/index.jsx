@@ -11,7 +11,6 @@ function AboutSection() {
         <span className="bg-[#1a1443] w-fit text-white rotate-90 p-2 px-5 text-xl rounded-md">
           ABOUT ME
         </span>
-        {/* biome-ignore lint/style/useSelfClosingElements: <explanation> */}
         <span className="h-36 w-[2px] bg-[#1a1443]"></span>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
@@ -28,7 +27,7 @@ function AboutSection() {
             src={personalData.profile}
             width={280}
             height={280}
-            alt="Joyva Alians"
+            alt="Joyva Alians Tamam"
             className="rounded-lg transition-all duration-1000 grayscale hover:grayscale-0 hover:scale-110 cursor-pointer"
           />
         </div>

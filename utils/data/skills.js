@@ -1,22 +1,24 @@
 export const skillsData = [
-    'HTML',
-    'CSS',
-    'Javascript',
-    'Typescript',
-    'React',
-    'Next JS',
-    'Tailwind',
-    'MongoDB',
-    'MySQL',
-    'PostgreSQL',
-    'Git',
-    'AWS',
-    'Bootstrap',
-    'Docker',
-    'Figma',
-    'Firebase',
-    'MaterialUI',
-    'Nginx'
+  'HTML',
+  'CSS',
+  'Javascript',
+  'Typescript',
+  'React',
+  'Next JS',
+  'Tailwind',
+  'MongoDB',
+  'MySQL',
+  'PostgreSQL',
+  'Git',
+  'AWS',
+  'Bootstrap',
+  'Docker',
+  'Go',
+  'Figma',
+  'Firebase',
+  'MaterialUI',
+  'Nginx',
+  'Strapi'
 ]
 
 // Choose your skills from below. Make sure it's in the same format and spelled correctly.
@@ -49,9 +51,14 @@ export const skillsData = [
   Picsart
   Sketch
   Unity
+  WolframAlpha
   Adobe XD
   After Effects
   Bootstrap
+  Bulma
+  CapacitorJs
+  Coffeescript
+  MemSQL
   C
   C++
   C#
@@ -67,6 +74,7 @@ export const skillsData = [
   Flutter
   Dart
   Typescript
+  Swift
   Git
   Figma
   Canva
@@ -83,6 +91,7 @@ export const skillsData = [
   Blender
   Premiere Pro
   Adobe Audition
+  Deno
   Django
   Gimp
   Graphql
@@ -92,5 +101,9 @@ export const skillsData = [
   Numpy
   OpenCV
   Pytorch
+  Selenium
+  Strapi
+  Tensorflow
+  Webex
   Wordpress
 */

@@ -1,19 +1,19 @@
 export const experiences = [{
         id: 1,
-        title: 'Software Engineer I',
-        company: "Politeknik Negeri Semarang",
-        duration: "(Sep 2021 - Present)"
+        title: 'IT Management',
+        company: "Zapplerepair Indonesia",
+        duration: "(Jun 2023 - Dec 2023)"
     },
     {
         id: 2,
-        title: "IT Management",
-        company: "ZappleRepair Indonesia",
-        duration: "(Jun 2023 - Nov 2023)"
+        title: "Software Developer",
+        company: "Politeknik Negeri Semarang",
+        duration: "(Jun 2021 - Jan 2022)"
     },
     {
         id: 3,
-        title: "Front End Developer",
-        company: "PT. Rapier Technology International",
-        duration: "(August 2024 - December 2024)"
+        title: "Self Employed",
+        company: "Code and build something in everyday.",
+        duration: "(Jan 2022 - Present)"
     }
 ]
