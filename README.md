@@ -1,16 +1,13 @@
 <p align="center" width="100%">
-    <img height="100" src="/profile.png>
+    <img height="100" src=/profile.png>
 </p>
 
 ---
 
-# [Built Portfolio With GitHub ](https://github.com/said7388/github-portfolio)
+# [Built Portfolio With GitHub ](https://github.com/joyva20/portfolio)
 
 ---
 
-# Developer Portfolio
-
-#### Are you struggling to create a professional portfolio website? Look no further! You can use the Developer Portfolio template and create your very own personalized portfolio today! My website is designed to be user-friendly and easily customizable, making it perfect for both developers and freelancers.
 
 ---
 
