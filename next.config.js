@@ -1,24 +1,21 @@
 const path = require('path')
 
-const isGithubPages = process.env.GITHUB_PAGES === 'true'
-const repoName = process.env.GITHUB_REPOSITORY?.split('/')?.[1]
+const isGitHubPages = process.env.GITHUB_PAGES === 'true';
+const repoName = process.env.GITHUB_REPOSITORY?.split('/')?.[1] ?? '';
+const isUserSite = repoName.endsWith('.github.io');
+const basePath = isGitHubPages && repoName && !isUserSite ? `/${repoName}` : '';
+const assetPrefix = basePath ? `${basePath}/` : '';
 
-// For GitHub Pages project sites:
-//   https://<user>.github.io/<repo>/
-// Next.js needs a basePath so asset URLs resolve correctly.
-const basePath = isGithubPages && repoName ? `/${repoName}` : ''
-
-/** @type {import('next').NextConfig} */
 module.exports = {
-  ...(isGithubPages ? { output: 'export' } : {}),
-  ...(isGithubPages ? { trailingSlash: true } : {}),
-  ...(isGithubPages && basePath ? { basePath, assetPrefix: `${basePath}/` } : {}),
-
+  output: 'export',
+  trailingSlash: true,
+  basePath,
+  assetPrefix,
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
   images: {
-    ...(isGithubPages ? { unoptimized: true } : {}),
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',

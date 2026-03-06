@@ -33,16 +33,17 @@ function ContactForm() {
       setError({ ...error, required: false });
     };
 
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      toast.error("Email service is not configured yet.");
+      return;
+    }
+
     try {
       setIsLoading(true);
-      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
-
-      if (!serviceId || !templateId || !publicKey) {
-        toast.error("Email service is not configured (EmailJS env vars missing).")
-        return;
-      }
 
       await emailjs.send(
         serviceId,
@@ -52,9 +53,7 @@ function ContactForm() {
           from_email: userInput.email,
           message: userInput.message,
         },
-        {
-          publicKey,
-        }
+        { publicKey }
       );
 
       toast.success("Message sent successfully!");
@@ -64,10 +63,10 @@ function ContactForm() {
         message: "",
       });
     } catch (error) {
-      toast.error("Failed to send message. Please try again later.");
+      toast.error("Failed to send message. Please try again.");
     } finally {
       setIsLoading(false);
-    };
+    }
   };
 
   return (

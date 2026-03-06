@@ -147,8 +147,8 @@ Deploying the app to platforms like Vercel or Netlify is quick and easy.
 1. **Sign up or log in** to [Vercel](https://vercel.com/).
 2. Once logged in, click on **"New Project"**.
 3. Select your **GitHub repo** (the one that contains your forked project) and click **Import**.
-4. Configure your environment variables in the Vercel dashboard by adding each key from your `.env` file.
-   - E.g., `NEXT_PUBLIC_GTM`, `NEXT_PUBLIC_APP_URL`, `TELEGRAM_BOT_TOKEN`, etc.
+4. Configure your environment variables in the Vercel dashboard.
+  - For the contact form, set: `NEXT_PUBLIC_EMAILJS_SERVICE_ID`, `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`, `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY`.
 5. Click on **Deploy**. Vercel will automatically detect your Next.js app and build it.
 6. Once the deployment is complete, you can visit your live website!
 
@@ -168,29 +168,25 @@ Whenever you push changes to your GitHub repo, Vercel will automatically redeplo
 
 ## Deploying to GitHub Pages (github.io)
 
-GitHub Pages only serves **static files**, so this project is configured to build as a **static export** when deployed via GitHub Actions.
+GitHub Pages only serves **static files**, so this project is deployed as a **static export** using GitHub Actions.
 
-### 1) Push to GitHub
-
-- Make sure your default branch is `main`.
-
-### 2) Enable GitHub Pages
+### 1) Enable GitHub Pages
 
 1. Open your repo on GitHub.
 2. Go to **Settings → Pages**.
 3. Under **Build and deployment**, set **Source** to **GitHub Actions**.
 
-### 3) Configure environment variables (optional, for Contact form)
+### 2) Configure EmailJS (optional, for Contact form)
 
-The contact form uses EmailJS (client-side) for GitHub Pages.
+The contact form uses EmailJS (client-side).
 
-Add these repository secrets or variables (GitHub → **Settings → Secrets and variables → Actions**):
+Add these repository secrets (GitHub → **Settings → Secrets and variables → Actions**):
 
 - `NEXT_PUBLIC_EMAILJS_SERVICE_ID`
 - `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`
 - `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY`
 
-### 4) Deploy
+### 3) Deploy
 
 - Push to `main` and the workflow will run automatically.
 - Your site will be available at: `https://<your-username>.github.io/<your-repo>/`
@@ -198,7 +194,6 @@ Add these repository secrets or variables (GitHub → **Settings → Secrets and
 ### Notes
 
 - GitHub Pages does **not** support Next.js Route Handlers / API routes.
-- Blog pages are generated at build time (static). Update content by re-deploying.
 
 ---
 
@@ -243,7 +238,6 @@ To display your blog posts from dev.to on the portfolio:
 | :--------------------: |
 |    @emailjs/browser    |
 |  @next/third-parties   |
-|         axios          |
 |      lottie-react      |
 |          next          |
 |       nodemailer       |
