@@ -11,6 +11,9 @@ module.exports = {
   trailingSlash: true,
   basePath,
   assetPrefix,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },

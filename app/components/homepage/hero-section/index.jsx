@@ -1,6 +1,7 @@
 // @flow strict
 
 import { personalData } from "@/utils/data/personal-data";
+import { withBasePath } from "@/utils/with-base-path";
 import Image from "next/image";
 import Link from "next/link";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
@@ -13,7 +14,7 @@ function HeroSection() {
   return (
     <section className="relative flex flex-col items-center justify-between py-4 lg:py-12">
       <Image
-        src="/hero.svg"
+        src={withBasePath("/hero.svg")}
         alt="Hero"
         width={1572}
         height={795}

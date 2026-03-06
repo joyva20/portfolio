@@ -1,6 +1,7 @@
 // @flow strict
 
 import { experiences } from "@/utils/data/experience";
+import { withBasePath } from "@/utils/with-base-path";
 import Image from "next/image";
 import { BsPersonWorkspace } from "react-icons/bs";
 import AnimationLottie from "../../helper/animation-lottie";
@@ -11,7 +12,7 @@ function Experience() {
   return (
     <div id="experience" className="relative z-50 border-t my-12 lg:my-24 border-[#25213b]">
       <Image
-        src="/section.svg"
+        src={withBasePath("/section.svg")}
         alt="Hero"
         width={1572}
         height={795}
@@ -43,7 +44,7 @@ function Experience() {
                   <GlowCard key={experience.id} identifier={`experience-${experience.id}`}>
                     <div className="p-3 relative">
                       <Image
-                        src="/blur-23.svg"
+                        src={withBasePath("/blur-23.svg")}
                         alt="Hero"
                         width={1080}
                         height={200}
