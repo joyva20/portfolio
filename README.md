@@ -166,6 +166,42 @@ Whenever you push changes to your GitHub repo, Vercel will automatically redeplo
 
 ---
 
+## Deploying to GitHub Pages (github.io)
+
+GitHub Pages only serves **static files**, so this project is configured to build as a **static export** when deployed via GitHub Actions.
+
+### 1) Push to GitHub
+
+- Make sure your default branch is `main`.
+
+### 2) Enable GitHub Pages
+
+1. Open your repo on GitHub.
+2. Go to **Settings → Pages**.
+3. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+
+### 3) Configure environment variables (optional, for Contact form)
+
+The contact form uses EmailJS (client-side) for GitHub Pages.
+
+Add these repository secrets or variables (GitHub → **Settings → Secrets and variables → Actions**):
+
+- `NEXT_PUBLIC_EMAILJS_SERVICE_ID`
+- `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`
+- `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY`
+
+### 4) Deploy
+
+- Push to `main` and the workflow will run automatically.
+- Your site will be available at: `https://<your-username>.github.io/<your-repo>/`
+
+### Notes
+
+- GitHub Pages does **not** support Next.js Route Handlers / API routes.
+- Blog pages are generated at build time (static). Update content by re-deploying.
+
+---
+
 # Tutorials :wrench:
 
 ## Gmail App Password Setup
